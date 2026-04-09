@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.metrics import confusion_matrix
 import re
 import argparse
-import FFN
+from FFN.py import FFN
 
 #accesed via <scriptname> <argument1> ..<argumentN>  eg: use_argparse.py abc def
 try:
