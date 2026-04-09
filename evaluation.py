@@ -25,6 +25,17 @@ except Exception as e:
     save_file_dir = "torch_output.bin"
     print(e)
 
+def sentence_vector(text):
+    # lower and takes away ., etc
+    words = re.findall(r'\b\w+\b', text.lower())
+
+    vecs = [fastxt_mod.get_word_vector(w) for w in words]
+
+    if len(vecs) == 0:
+        return np.zeros(EMBED_DIM)
+
+    vec = np.mean(vecs, axis=0)
+    return vec / (np.linalg.norm(vec) + 1e-8)
 
 model = torch.load(save_file_dir, weights_only=False)
 
