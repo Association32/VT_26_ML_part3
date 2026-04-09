@@ -1,3 +1,6 @@
+import torch
+import torch.nn as nn
+
 class FFN(nn.Module):
     def __init__(self, input_dim, num_classes):
         super().__init__()
