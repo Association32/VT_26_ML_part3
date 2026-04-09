@@ -14,17 +14,20 @@ try:
     parser = argparse.ArgumentParser()
     #Add a couple of arguments 
     parser.add_argument("testfile", help="The test_file.")
-    parser.add_argument("savefile", help="The output_file.")
+    parser.add_argument("savefile", help="The output_file from training.")
+    parser.add_argument("fasttextfile", help="The output_file from training.")
     #Parse the arguments given 
     args = parser.parse_args()
     #Use them
+    fasttext_file = args.fasttextfile
     test_file = args.testfile #the test.tsv
     save_file_dir = args.savefile #where the model is saved
 except Exception as e:
+    fasttext_file = "out.bin"
     test_file = "test.tsv"
     save_file_dir = "torch_output.bin"
     print(e)
-fastxt_mod = fasttext.load_model(output_file)
+fastxt_mod = fasttext.load_model(fasttext_file)
 def sentence_vector(text):
     # lower and takes away ., etc
     words = re.findall(r'\b\w+\b', text.lower())
