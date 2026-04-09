@@ -2,6 +2,7 @@
 # Part 4 - Evaluation
 
 import torch
+import fasttext
 import numpy as np
 from sklearn.metrics import confusion_matrix
 import re
