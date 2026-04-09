@@ -1,6 +1,5 @@
 
 # Part 4 - Evaluation
-
 import torch
 import fasttext
 import numpy as np
