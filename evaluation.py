@@ -28,7 +28,7 @@ except Exception as e:
 def sentence_vector(text):
     # lower and takes away ., etc
     words = re.findall(r'\b\w+\b', text.lower())
-
+    fastxt_mod = fasttext.load_model(output_file)
     vecs = [fastxt_mod.get_word_vector(w) for w in words]
 
     if len(vecs) == 0:
