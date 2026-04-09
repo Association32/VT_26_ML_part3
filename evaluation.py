@@ -1,7 +1,7 @@
 
 # Part 4 - Evaluation
 import torch
-import fasttext
+import fasttext as ft
 import numpy as np
 from sklearn.metrics import confusion_matrix
 import re
@@ -27,7 +27,7 @@ except Exception as e:
     test_file = "test.tsv"
     save_file_dir = "torch_output.bin"
     print(e)
-fastxt_mod = fasttext.load_model(fasttext_file)
+fastxt_mod = ft.load_model(fasttext_file)
 def sentence_vector(text):
     # lower and takes away ., etc
     words = re.findall(r'\b\w+\b', text.lower())
