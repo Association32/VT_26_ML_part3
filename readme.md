@@ -1,4 +1,4 @@
-Requirements are
+Requirements:
 
 fasttext
 
@@ -16,11 +16,63 @@ fasttext
 
 numpy
 
-sklearn 
+sklearn
 
 re
 
 
+
+How to execute:
+
+run the bash-file run.sh to import the files from the github
+
+When all files are in place, run embeddings.py with the following parameters for argparse
+
+dimensions
+
+epochs
+
+inputfile
+
+outputfile
+
+Example :
+
+python embeddings.py 100 20 train.tsv out.bin
+
+
+
+Run neural.py with the following parameters for argparse
+
+epochs
+
+inputfile
+
+outputfile
+
+savefile
+
+batchsize
+
+learningrate
+
+Example:
+
+python neural.py 100 train.tsv out.bin neural\_model.bin 100 0.001
+
+
+
+Run evaluation.py with the following parameters for argparse
+
+testfile
+
+savefile
+
+fasttextfile
+
+Example:
+
+python evaluation.py test.tsv neural\_model.bin out.bin
 
 
 
@@ -42,4 +94,16 @@ It is also possible that the feed-forward network simply is not good enough to h
 
 The confusion matrix indicates that the model has problems to distinguish between most classes and tends to predict a small subset of labels more frequently.
 This points to that the learned representations are not very distinct.
+
+
+
+One small not on the first script.
+
+Bash did not like utf-8 and complained about trailing \\r-newlines
+
+Saving the file with ansi solved this
+
+
+
+Transkript is found in transscript.txt
 
