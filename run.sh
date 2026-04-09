@@ -4,3 +4,4 @@ curl -o neural.py https://raw.githubusercontent.com/Association32/VT_26_ML_part3
 curl -o train.tsv https://raw.githubusercontent.com/Association32/VT_26_ML_part3/main/train.tsv
 curl -o test.tsv https://raw.githubusercontent.com/Association32/VT_26_ML_part3/main/test.tsv
 curl -o labels.txt https://raw.githubusercontent.com/Association32/VT_26_ML_part3/main/labels.txt
+curl -o utils.py https://raw.githubusercontent.com/Association32/VT_26_ML_part3/main/utils.py
