@@ -24,11 +24,11 @@ except Exception as e:
     test_file = "test.tsv"
     save_file_dir = "torch_output.bin"
     print(e)
-
+fastxt_mod = fasttext.load_model(output_file)
 def sentence_vector(text):
     # lower and takes away ., etc
     words = re.findall(r'\b\w+\b', text.lower())
-    fastxt_mod = fasttext.load_model(output_file)
+    
     vecs = [fastxt_mod.get_word_vector(w) for w in words]
 
     if len(vecs) == 0:
